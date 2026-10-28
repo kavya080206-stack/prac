@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My App1</title>
+</head>
+<body>
+    <h1>Welcome to My App1</h1>
+    <p>This is my first Docker application.</p>
+</body>
+</html>
+
+
+
+  FROM tomcat:latest
+COPY index.html /usr/local/tomcat/webapps/myapp3/index.html
+EXPOSE 8080
+
+  FROM tomcat:latest
+RUN mkdir -p /usr/local/tomcat/webapps/myapp3
+COPY index.html /usr/local/tomcat/webapps/myapp3/index.html
+EXPOSE 8080
